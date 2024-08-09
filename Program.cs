@@ -9,8 +9,11 @@ using Proyecto_Backend_Csharp.DTOs;
 var builder = WebApplication.CreateBuilder(args);
 
 // Dpendency Injection
-//Characters Services
-builder.Services.AddScoped<ICommonService<CharacterDTO, CharacterInsertDTO, CharacterUpdateDTO>, CharacterService>();
+
+//services (custom services)
+// builder.Services.AddScoped<ICommonService<CharacterDTO, CharacterInsertDTO, CharacterUpdateDTO>, CharacterService>();
+builder.Services.AddMyServices();
+
 
 //comparacion 3 tipos de DI(Singleton, Scoped, Transient)
 builder.Services.AddKeyedSingleton<IRandomService, RandomService>("RandomSingleton");

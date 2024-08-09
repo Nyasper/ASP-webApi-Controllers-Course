@@ -348,3 +348,4 @@ C:\Users\herre\Documents\PROGRAMACION WEB\Proyectos\C#\ASP\ASP-webApi-Controller
 C:\Users\herre\Documents\PROGRAMACION WEB\Proyectos\C#\ASP\ASP-webApi-Controllers-Course\ASP-webApi-Controllers-Course\obj\Debug\net8.0\Proyecto Backend Csharp.pdb
 C:\Users\herre\Documents\PROGRAMACION WEB\Proyectos\C#\ASP\ASP-webApi-Controllers-Course\ASP-webApi-Controllers-Course\obj\Debug\net8.0\Proyecto Backend Csharp.genruntimeconfig.cache
 C:\Users\herre\Documents\PROGRAMACION WEB\Proyectos\C#\ASP\ASP-webApi-Controllers-Course\ASP-webApi-Controllers-Course\obj\Debug\net8.0\ref\Proyecto Backend Csharp.dll
+C:\Users\herre\Documents\PROGRAMACION WEB\Proyectos\C#\ASP\ASP-webApi-Controllers-Course\ASP-webApi-Controllers-Course\obj\Debug\net8.0\Proyecto Backend Csharp.sourcelink.json
