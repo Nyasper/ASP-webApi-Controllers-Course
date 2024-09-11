@@ -3,11 +3,8 @@ using Microsoft.EntityFrameworkCore;
 using Proyecto_Backend_Csharp;
 using Proyecto_Backend_Csharp.Models;
 using Proyecto_Backend_Csharp.Repository;
-using Proyecto_Backend_Csharp.Services;
+using Proyecto_Backend_Csharp.Extensions;
 using Proyecto_Backend_Csharp.DTOs;
-using Microsoft.AspNetCore.Authentication.JwtBearer;
-using Microsoft.IdentityModel.Tokens;
-using System.Text;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -17,17 +14,11 @@ var builder = WebApplication.CreateBuilder(args);
 // builder.Services.AddScoped<ICommonService<CharacterDTO, CharacterInsertDTO, CharacterUpdateDTO>, CharacterService>();
 builder.Services.AddMyServices();
 
-
-//comparacion 3 tipos de DI(Singleton, Scoped, Transient)
-builder.Services.AddKeyedSingleton<IRandomService, RandomService>("RandomSingleton");
-builder.Services.AddKeyedScoped<IRandomService, RandomService>("RandomScoped");
-builder.Services.AddKeyedTransient<IRandomService, RandomService>("RandomTransient");
-
 //HTTP client
-builder.Services.AddHttpClient<IPostsService, PostsService>(c=>
-{
-    c.BaseAddress = new Uri("https://jsonplaceholder.typicode.com/posts");
-});
+// builder.Services.AddHttpClient<IPostsService, PostsService>(c=>
+// {
+//     c.BaseAddress = new Uri("https://jsonplaceholder.typicode.com/posts");
+// });
 
 //Repository
 builder.Services.AddScoped<IRepository<Character>, CharacterRepository>();
@@ -50,24 +41,7 @@ builder.Services.AddScoped<IValidator<CharacterUpdateDTO>,CharacterUpdateValidat
 
 
 // JWT
-builder.Services.AddAuthentication(x => 
-{
-    x.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
-    x.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
-    x.DefaultScheme = JwtBearerDefaults.AuthenticationScheme;
-}).AddJwtBearer(options =>
-{
-    options.TokenValidationParameters = new TokenValidationParameters
-    {
-        ValidateIssuer = true,
-        ValidateAudience = true,
-        ValidateLifetime = true,
-        ValidateIssuerSigningKey = true,
-        ValidIssuer = builder.Configuration["Jwt:Issuer"],
-        ValidAudience = builder.Configuration["Jwt:Audience"],
-        IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(builder.Configuration["Jwt:Key"]!))
-    };
-});
+builder.Services.AddJwtAuthentication(builder.Configuration);
 builder.Services.AddAuthorization();
 
 //AutoMappers

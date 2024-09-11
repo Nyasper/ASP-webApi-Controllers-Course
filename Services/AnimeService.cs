@@ -13,10 +13,16 @@ using Proyecto_Backend_Csharp.Repository;
 
 namespace Proyecto_Backend_Csharp.Services;
 
-public class AnimeService(AniContext context, IMapper mapper) : ICommonService<AnimeDTO, AnimeInsertDTO, AnimeUpdateDTO>
+public class AnimeService : ICommonService<AnimeDTO, AnimeInsertDTO, AnimeUpdateDTO>
 {
-private readonly DbSet<Anime> _animeContext = context.Animes;
-  private readonly IMapper _mapper = mapper;
+  private readonly AniContext _context;
+  private readonly IMapper _mapper;
+  public AnimeService(IMapper mapper, AniContext context)
+  {
+    this._mapper = mapper;
+    this._context = context;
+  }
+   
 
   public List<string> Errors => throw new NotImplementedException();
 
@@ -27,42 +33,40 @@ private readonly DbSet<Anime> _animeContext = context.Animes;
 
   public async Task<IEnumerable<AnimeDTO>> Get()
   {
-    var Animes = await _animeContext.ToListAsync();
-    return Animes.Select(mapper.Map<AnimeDTO>);
+    List<Anime> Animes = await _context.Animes.ToListAsync();
+    return Animes.Select(_mapper.Map<AnimeDTO>).Where(dto => dto != null)!;
   }
 
   public Task<AnimeDTO?> DeleteById(int Id)
   {
-      throw new NotImplementedException();
+    throw new NotImplementedException();
   }
-
-
 
   public Task<AnimeDTO?> GetById(int Id)
   {
-      throw new NotImplementedException();
+    throw new NotImplementedException();
   }
 
   public Task<AnimeDTO?> Update(int Id, AnimeUpdateDTO ItemToUpdate)
   {
-      throw new NotImplementedException();
+    throw new NotImplementedException();
   }
 
   public bool Validate(AnimeInsertDTO InsertDto)
   {
-      throw new NotImplementedException();
+    throw new NotImplementedException();
   }
 
   public bool Validate(AnimeUpdateDTO UpdateDto)
   {
-      throw new NotImplementedException();
+    throw new NotImplementedException();
   }
 
   public string GenerateToken()
   {
     try
     {
-       List<Claim> claims = 
+      List<Claim> claims = 
     [
       new Claim(JwtRegisteredClaimNames.Sub, "AllAnimes"),
       new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()),

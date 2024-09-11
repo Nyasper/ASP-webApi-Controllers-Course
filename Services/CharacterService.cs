@@ -6,16 +6,21 @@ using AutoMapper;
 
 namespace Proyecto_Backend_Csharp.Services;
 
-public class CharacterService(IRepository<Character> repository, IMapper mapper) : ICommonService<CharacterDTO, CharacterInsertDTO, CharacterUpdateDTO>
+public class CharacterService : ICommonService<CharacterDTO, CharacterInsertDTO, CharacterUpdateDTO>
 {
   public List<string> Errors { get; } = [];
-  private readonly IRepository<Character> _characterRepository = repository;
-  private readonly IMapper _mapper = mapper;
+  private readonly IRepository<Character> _characterRepository;
+  private readonly IMapper _mapper;
+  public CharacterService(IRepository<Character> repository, IMapper mapper)
+  {
+    this._characterRepository = repository;
+    this._mapper = mapper;
+  }
 
   public async Task<IEnumerable<CharacterDTO>> Get()
   {
     var Characters = await _characterRepository.Get();
-    return Characters.Select(c=> mapper.Map<CharacterDTO>(c));
+    return Characters.Select(c=> _mapper.Map<CharacterDTO>(c))!;
   }
   public async Task<CharacterDTO?> GetById(int Id)
   {
@@ -26,11 +31,11 @@ public class CharacterService(IRepository<Character> repository, IMapper mapper)
   }
   public async Task<CharacterDTO> Add(CharacterInsertDTO CharacterToInsertDTO)
   {
-    var character = _mapper.Map<Character>(CharacterToInsertDTO);
+    var character = _mapper.Map<Character>(CharacterToInsertDTO)!;
     await _characterRepository.Add(character);
     await _characterRepository.SaveChanges();
 
-    return _mapper.Map<CharacterDTO>(character);
+    return _mapper.Map<CharacterDTO>(character)!;
   }
   public async Task<CharacterDTO?> Update(int Id, CharacterUpdateDTO characterToUpdate)
   {
