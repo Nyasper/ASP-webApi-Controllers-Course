@@ -10,10 +10,11 @@
 using System;
 using System.Reflection;
 
+[assembly: Microsoft.Extensions.Configuration.UserSecrets.UserSecretsIdAttribute("584e0ce2-f81b-423a-a42f-eedb833aceff")]
 [assembly: System.Reflection.AssemblyCompanyAttribute("Proyecto Backend Csharp")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e4854f9e59840e9718f55dba5c26eb2913d5e070")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+4f235fa9fa5de56012c7094d3888542e364de68b")]
 [assembly: System.Reflection.AssemblyProductAttribute("Proyecto Backend Csharp")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Proyecto Backend Csharp")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

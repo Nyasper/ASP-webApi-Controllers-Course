@@ -8,8 +8,14 @@ public class MappingProfile : Profile
 {
   public MappingProfile()
   {
-    CreateMap<CharacterInsertDTO, Character>();
+    // Character
     CreateMap<Character, CharacterDTO>();
+    CreateMap<CharacterInsertDTO, Character>();
     CreateMap<CharacterUpdateDTO, Character>();
+
+    // Anime
+    CreateMap<Anime, AnimeDTO>();
+    CreateMap<AnimeInsertDTO, Anime>();
+    CreateMap<AnimeUpdateDTO, Anime>();
   }
 }

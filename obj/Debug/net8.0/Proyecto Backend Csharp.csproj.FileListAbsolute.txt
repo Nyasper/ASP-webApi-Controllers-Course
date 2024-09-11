@@ -349,3 +349,12 @@ C:\Users\herre\Documents\PROGRAMACION WEB\Proyectos\C#\ASP\ASP-webApi-Controller
 C:\Users\herre\Documents\PROGRAMACION WEB\Proyectos\C#\ASP\ASP-webApi-Controllers-Course\ASP-webApi-Controllers-Course\obj\Debug\net8.0\Proyecto Backend Csharp.genruntimeconfig.cache
 C:\Users\herre\Documents\PROGRAMACION WEB\Proyectos\C#\ASP\ASP-webApi-Controllers-Course\ASP-webApi-Controllers-Course\obj\Debug\net8.0\ref\Proyecto Backend Csharp.dll
 C:\Users\herre\Documents\PROGRAMACION WEB\Proyectos\C#\ASP\ASP-webApi-Controllers-Course\ASP-webApi-Controllers-Course\obj\Debug\net8.0\Proyecto Backend Csharp.sourcelink.json
+C:\Users\herre\Documents\PROGRAMACION WEB\Proyectos\C#\ASP\ASP-webApi-Controllers-Course\ASP-webApi-Controllers-Course\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\herre\Documents\PROGRAMACION WEB\Proyectos\C#\ASP\ASP-webApi-Controllers-Course\ASP-webApi-Controllers-Course\bin\Debug\net8.0\Microsoft.IdentityModel.Abstractions.dll
+C:\Users\herre\Documents\PROGRAMACION WEB\Proyectos\C#\ASP\ASP-webApi-Controllers-Course\ASP-webApi-Controllers-Course\bin\Debug\net8.0\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\herre\Documents\PROGRAMACION WEB\Proyectos\C#\ASP\ASP-webApi-Controllers-Course\ASP-webApi-Controllers-Course\bin\Debug\net8.0\Microsoft.IdentityModel.Logging.dll
+C:\Users\herre\Documents\PROGRAMACION WEB\Proyectos\C#\ASP\ASP-webApi-Controllers-Course\ASP-webApi-Controllers-Course\bin\Debug\net8.0\Microsoft.IdentityModel.Protocols.dll
+C:\Users\herre\Documents\PROGRAMACION WEB\Proyectos\C#\ASP\ASP-webApi-Controllers-Course\ASP-webApi-Controllers-Course\bin\Debug\net8.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:\Users\herre\Documents\PROGRAMACION WEB\Proyectos\C#\ASP\ASP-webApi-Controllers-Course\ASP-webApi-Controllers-Course\bin\Debug\net8.0\Microsoft.IdentityModel.Tokens.dll
+C:\Users\herre\Documents\PROGRAMACION WEB\Proyectos\C#\ASP\ASP-webApi-Controllers-Course\ASP-webApi-Controllers-Course\bin\Debug\net8.0\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\herre\Documents\PROGRAMACION WEB\Proyectos\C#\ASP\ASP-webApi-Controllers-Course\ASP-webApi-Controllers-Course\bin\Debug\net8.0\System.Text.Json.dll

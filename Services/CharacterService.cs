@@ -16,7 +16,7 @@ public class CharacterService(IRepository<Character> repository, IMapper mapper)
   {
     var Characters = await _characterRepository.Get();
     return Characters.Select(c=> mapper.Map<CharacterDTO>(c));
-    }
+  }
   public async Task<CharacterDTO?> GetById(int Id)
   {
     var character = await _characterRepository.GetById(Id);

@@ -2,9 +2,10 @@ using FluentValidation;
 using Microsoft.AspNetCore.Mvc;
 using Proyecto_Backend_Csharp.Services;
 using Proyecto_Backend_Csharp.DTOs;
+using Microsoft.AspNetCore.Authorization;
 
 namespace MyApp.Namespace
-{
+{   
     [Route("api/[controller]")]
     [ApiController]
     public class CharactersController

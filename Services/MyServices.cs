@@ -8,5 +8,6 @@ public static class ServicesRegister
   public static void AddMyServices(this IServiceCollection services)
   {
     services.AddScoped<ICommonService<CharacterDTO, CharacterInsertDTO, CharacterUpdateDTO>, CharacterService>();
+    services.AddScoped<ICommonService<AnimeDTO, AnimeInsertDTO, AnimeUpdateDTO>, AnimeService>();
   }
 }
